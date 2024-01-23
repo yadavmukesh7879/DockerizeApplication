@@ -1,0 +1,32 @@
+type Query{
+    getAllEmployee: [Employee]
+    getEmployeeById(id:Int):Employee
+
+}
+type Mutation{
+    createEmployee(employee:EmployeeInput):Employee
+    updateEmployee(employee:EmployeeInput,id:ID):Employee
+    deleteEmployee(id:Int):DeleteResponse
+}
+type Employee{
+    id:ID!
+    name:String
+    age:Int
+    location:String
+    email:String
+    department:String
+    createdAt:String
+    updatedAt:String
+}
+input EmployeeInput{
+    name:String
+    age:Int
+    location:String
+    email:String
+    department:String
+}
+
+type DeleteResponse {
+    success: Boolean!
+    message: String
+}
